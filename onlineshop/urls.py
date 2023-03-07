@@ -12,7 +12,7 @@ urlpatterns = [
     path('userapp/', include('userapp.urls')),
 
 
-    path('Page_index_2', Home2View.as_view()),
+    path('Page_index_2', Home2View.as_view())
 
 
 

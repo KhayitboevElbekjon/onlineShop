@@ -1,6 +1,9 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import authenticate, login,logout
+
+from .models import Profil
 
 
 class LoginView(View):
@@ -14,7 +17,7 @@ class LoginView(View):
             login(request, user)
             return redirect('/asosiy/home/')
 
-        return redirect('/userapp/')
+        return redirect('/userapp/register')
 
 class LogoutView(View):
     def get(self,request):
@@ -24,3 +27,22 @@ class LogoutView(View):
 class RegisterView(View):
     def get(self,request):
         return render(request,'page-user-register.html')
+    def post(self,request):
+        name=request.POST.get('ism')
+        pp=request.POST.get('parol')
+        tp=request.POST.get('takparol')
+        shaxaR=request.POST.get('shaxar')
+        davlaT=request.POST.get('davlat')
+        jins=request.POST.get('jins')
+        email=request.POST.get('email')
+        if pp == tp:
+            user1=User.objects.create_user(username=name,password=tp,email=email)
+            Profil.objects.create(
+                ism=name,
+                jins=jins,
+                shaxar=shaxaR,
+                davlat=davlaT,
+                user=user1
+            )
+            return redirect('/userapp/')
+
