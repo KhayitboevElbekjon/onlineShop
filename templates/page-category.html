@@ -195,7 +195,7 @@
 			    <h4 class="card-title"><a href="/asosiy/bolim/{{i.id}}">{{i.nom}}</a></h4>
 			    <ul class="list-menu">
 					{% for j in i.mahsulot_set.all|slice:"0:7" %}
-			    	<li><a href="/asosiy/mahsulot/{{i.id}}">{{j.nom}}</a></li>
+			    	<li><a href="/asosiy/mahsulot/{{j.id}}">{{j.nom}}</a></li>
 					{% endfor %}
 			    </ul>
 			  </div>

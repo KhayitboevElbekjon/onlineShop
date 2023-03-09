@@ -29,5 +29,6 @@ class Media(models.Model):
 class Izoh(models.Model):
     baho=models.SmallIntegerField()
     matn=models.TextField()
-    sana=models.DateField()
+    sana=models.DateTimeField(auto_now_add=True,null=True,blank=True)
+    mahsulot_fk=models.ForeignKey(Mahsulot,on_delete=models.CASCADE,null=True)
     profil_fk=models.ForeignKey(Profil,on_delete=models.CASCADE)

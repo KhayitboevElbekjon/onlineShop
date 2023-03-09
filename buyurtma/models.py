@@ -1,3 +1,14 @@
 from django.db import models
 
-# Create your models here.
+from asosiy.models import Mahsulot
+from userapp.models import Profil
+class Savat(models.Model):
+    profil_fk=models.ForeignKey(Profil,on_delete=models.CASCADE)
+    mahsulot_fk=models.ForeignKey(Mahsulot,on_delete=models.CASCADE)
+    miqdori=models.SmallIntegerField()
+    narxi=models.IntegerField()
+    chegirma=models.IntegerField()
+
+class Tanlangan(models.Model):
+    profil_fk=models.ForeignKey(Profil,on_delete=models.CASCADE)
+    mahsulot_fk=models.ForeignKey(Mahsulot,on_delete=models.CASCADE)

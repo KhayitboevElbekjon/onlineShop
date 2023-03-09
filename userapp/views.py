@@ -36,7 +36,7 @@ class RegisterView(View):
         jins=request.POST.get('jins')
         email=request.POST.get('email')
         if pp == tp:
-            user1=User.objects.create_user(username=name,password=tp,email=email)
+            user1=User.objects.create_user(username=email,password=tp)
             Profil.objects.create(
                 ism=name,
                 jins=jins,
