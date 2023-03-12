@@ -17,12 +17,12 @@ class LoginView(View):
             login(request, user)
             return redirect('/asosiy/home/')
 
-        return redirect('/userapp/register')
+        return redirect('/register')
 
 class LogoutView(View):
     def get(self,request):
         logout(request)
-        return redirect('/userapp/')
+        return redirect('/')
 
 class RegisterView(View):
     def get(self,request):
@@ -44,5 +44,5 @@ class RegisterView(View):
                 davlat=davlaT,
                 user=user1
             )
-            return redirect('/userapp/')
+            return redirect('/')
 

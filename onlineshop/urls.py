@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('asosiy/', include('asosiy.urls')),
     path('buyurtma/', include('buyurtma.urls')),
-    path('userapp/', include('userapp.urls')),
+    path('', include('userapp.urls')),
 
 
     path('Page_index_2', Home2View.as_view())

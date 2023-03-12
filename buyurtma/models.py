@@ -7,7 +7,7 @@ class Savat(models.Model):
     mahsulot_fk=models.ForeignKey(Mahsulot,on_delete=models.CASCADE)
     miqdori=models.SmallIntegerField()
     narxi=models.IntegerField()
-    chegirma=models.IntegerField()
+
 
 class Tanlangan(models.Model):
     profil_fk=models.ForeignKey(Profil,on_delete=models.CASCADE)
